@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Mechatronix</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"> 
+    <style>
+        :root{
+            --background: rgba(35, 147, 221, 0.85);
+        }
+        *,*::before,*::after{
+            box-sizing: border-box;
+            
+        }
+        body{
+            margin: 0;
+            background: #222;
+            font-family: Arial, sans-serif;
+            font-weight: 300;
+        }
+        .content{
+            height: 200vh;
+            background-image:url(https://i.pinimg.com/originals/30/72/a6/3072a6971a7785c25b92d405958fd4e7.jpg);
+            background-color: #333;
+            background-blend-mode: multiply;
+            background-size:contain;
+            display: grid;
+            background-repeat: no-repeat;
+            place-items: center;
+            
+        }
+        header{
+            position: fixed;
+            width: 100%;
+            background-color: var(--background);
+            text-align: center;
+            
+        }
+        header img{
+            position: absolute;
+            top: 0;
+            right: 0;
+
+        }
+        header h1{
+            font-family: 'Permanent Marker', cursive;
+            font-weight: lighter;
+            letter-spacing: 1px;
+            color: white;
+        }
+        nav{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            text-align: left;
+            background-color: var(--background);
+            width: 100%;
+            transform: scale(1,0);
+            transition: transform 400ms ease-in-out;
+            transform-origin: top;
+            
+        }
+        nav ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li{
+            margin-left:1em;
+            font-size: 1.2rem;
+            margin-bottom: 1em;
+
+        }
+        nav a{
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: opacity 150ms ease-in-out;
+
+        }
+        nav a:hover{
+            color: lightgrey;
+        }
+        .nav-toggle:checked ~ nav{
+            display: block;
+            transform: scale(1,1);
+        }
+        .nav-toggle:checked ~ nav a{
+            opacity: 1;
+            transition: opacity 250ms ease-in-out 250ms ;
+        }
+        .nav-toggle{
+            display: none;
+        }
+        .nav-toggle-label{
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-left: 1em;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .nav-toggle-label span,
+        .nav-toggle-label span::before,
+        .nav-toggle-label span::after{
+            display:block;
+            background: white;
+            height: 2px;
+            width: 1.8em;
+            border-radius: 2px;
+            position: relative;
+        }
+        .nav-toggle-label span::before,
+        .nav-toggle-label span::after{
+            position: absolute;
+            content: "";
+        }
+        .nav-toggle-label span::before{
+            top: 7px;
+        }
+        .nav-toggle-label span::after{
+            bottom: 7px;
+        }
+        .blocker{
+            position: absolute;
+            left: 25%;
+            top: 99.90%;
+        }
+            
+        
+        /* check is a pseudo class which look for if a checkbox is chexked */
+
+    </style>
+ 
+</head>
+<body>
+    <header>
+        
+        <h1 class="logo">MECHATRONIX</h1>
+        <img  height="90px" src="mechatonix.png"/>
+        <input type="checkbox" class="nav-toggle" id="nav-toggle">
+        <nav>
+            <ul>
+                <li><a href="https://www.mechatronix.com.pk/">Home</a></li>
+                <li><a href="https://www.mechatronix.com.pk/products-services.aspx">Products</a></li>
+                <li><a href="https://www.mechatronix.com.pk/products-services.aspx">Services</a> </li>
+                <li><a href="https://www.mechatronix.com.pk/ourclients.aspx">Our Clients</a></li>
+                <li><a href="https://www.mechatronix.com.pk/contact-us.aspx">About us</a></li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </header>
+    <br>
+    
+    <div class="content">
+    </div>
+   
+</body>
+</html>
